@@ -1,5 +1,7 @@
 import logging
 from abc import ABC, abstractmethod
+from typing import Union
+
 
 import pandas as pd
 import numpy as np
