@@ -12,6 +12,7 @@ def train_model(
     y_train: pd.DataFrame,
     X_test: pd.DataFrame,
     y_test: pd.DataFrame,
+    config: ModelNameConfig
 )-> RegressorMixin:
     """
     Trains the model on the ingested data.
@@ -26,7 +27,7 @@ def train_model(
             trained_model = model.train(X_train, y_train)
             return trained_model
         else:
-            raise ValueError("Model {} not supported".format(config.    model_name))
+            raise ValueError("Model {} not supported".format(config.model_name))
     except Exception as e:
         logging.error("Error in training model: {}".format(e))
         raise e
