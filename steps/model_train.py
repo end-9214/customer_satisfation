@@ -3,7 +3,7 @@ import pandas as pd
 from zenml import step
 
 from src.model_dev import LinearRegressionModel
-from sklearn.base import RegressionMixin
+from sklearn.base import RegressorMixin
 from .config import ModelNameConfig
 
 @step
@@ -12,7 +12,7 @@ def train_model(
     y_train: pd.DataFrame,
     X_test: pd.DataFrame,
     y_test: pd.DataFrame,
-)-> RegressionMixin:
+)-> RegressorMixin:
     """
     Trains the model on the ingested data.
 

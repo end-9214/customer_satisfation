@@ -80,7 +80,7 @@ class DataCleaning:
         self.data = data
         self.strategy = strategy
 
-    def handle_data(self)->Union(pd.DataFrame, pd.Series):
+    def handle_data(self)->Union[pd.DataFrame, pd.Series]:
         """
         Handle the data
         """

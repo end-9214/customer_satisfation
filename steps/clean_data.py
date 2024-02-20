@@ -26,12 +26,12 @@ def clean_df(df: pd.DataFrame)-> Tuple[
         y_test: Testing labels
     """
     try:
-        process_strategy = DataPreProcessStrategy()
-        data_cleaning = DataCleaning(df, process_strategy)
-        processed_data = data_cleaning.process_data()
+        preprocess_strategy = DataPreProcessStrategy()
+        data_cleaning = DataCleaning(df, preprocess_strategy)
+        preprocessed_data = data_cleaning.handle_data()
 
         divide_strategy = DataDivideStrategy()
-        data_cleaning = DataCleaning(processed_data, divide_strategy)
+        data_cleaning = DataCleaning(preprocessed_data, divide_strategy)
         X_train,X_test,y_train,y_test = data_cleaning.handle_data()
         logging.info("Data cleaning completed")
         return X_train,X_test,y_train,y_test
